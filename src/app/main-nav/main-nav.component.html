@@ -7,12 +7,15 @@
             <a mat-list-item href="#">Link 3</a>
         </mat-nav-list>
     </mat-sidenav>
+    <!-- <div> -->
     <mat-sidenav-content>
-        <mat-toolbar color="primary">
+        <mat-toolbar class="textCenter" color="primary">
             <button type="button" aria-label="Toggle sidenav" class="menuIcon" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-            <span>angular-material</span>
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <!-- <div> -->
+            <img class="responsive" src="../assets/images/logo.png" alt="nature">
+            <!-- </div> -->
             <span class="spacer"></span>
             <div class="navBarEfra">
                 <a href="#">Link 1</a>
@@ -23,4 +26,5 @@
         <!-- Add Content Here -->
         <ng-content></ng-content>
     </mat-sidenav-content>
+    <!-- </div> -->
 </mat-sidenav-container>

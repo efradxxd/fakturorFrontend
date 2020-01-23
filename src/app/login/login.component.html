@@ -1,0 +1,80 @@
+<div class="login-page">
+    <!-- <div id="imgContainer"> -->
+    <img src="../assets/images/logo.png" class="logo">
+    <!-- </div> -->
+    <mat-card class="mat-elevation-z12">
+        <mat-card-title style="text-align:center;">BIENVENIDO</mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs matTab">
+            <mat-tab label="Ingresar" style="font-family: 'Century Gothic';
+            " class="matTab">
+                <mat-card-content>
+                    <form action="">
+                        <mat-form-field>
+                            <input matInput placeholder="Email" required name="email" ngModel #email="ngModel">
+                            <mat-error *ngIf="email.invalid"> Tu email es necesario</mat-error>
+                            <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Password" type="password" required minlength="6" name="password" ngModel #password="ngModel">
+                            <mat-error *ngIf="password.errors && password.errors.required">
+                                Tu contraseña es necesaria
+                            </mat-error>
+                            <mat-error *ngIf="password.errors && password.errors.minlength">
+                                Por seguridad tu contraseña debe tener más de 6 caracteres
+                            </mat-error>
+                            <mat-icon matSuffix>lock</mat-icon>
+                        </mat-form-field>
+                        <!-- <mat-checkbox>Remember Me!</mat-checkbox> -->
+                        <button mat-raised-button color="primary" class="login-button">
+                  ACCEDER
+                </button>
+
+                        <button mat-raised-button color="primary" class="login-button">
+                  RECUPERAR CONTRASEÑA
+                </button>
+                    </form>
+                </mat-card-content>
+            </mat-tab>
+            <!-- <mat-tab label="Registrate">
+                <mat-card-content>
+                    <form action="">
+                        <mat-form-field>
+                            <input matInput placeholder="User Name" required name="username" ngModel #username="ngModel">
+                            <mat-icon matSuffix>perm_identity</mat-icon>
+                            <mat-error *ngIf="username.invalid">
+                                Username is required
+                            </mat-error>
+
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Email" required name="email" ngModel #email="ngModel">
+                            <mat-error *ngIf="email.invalid">Email is required</mat-error>
+                            <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Password" type="password" required minlength="6" name="password" ngModel #password="ngModel">
+                            <mat-error *ngIf="password.errors && password.errors.required">
+                                Password is required
+                            </mat-error>
+                            <mat-error *ngIf="password.errors && password.errors.minlength">
+                                Password must be of length 6
+                            </mat-error>
+                            <mat-icon matSuffix>lock</mat-icon>
+
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Password" type="password" required minlength="6" name="repassword" ngModel #repassword="ngModel">
+                            <mat-error *ngIf="repassword.errors && repassword.errors.required">
+                                Re-Enter Password is required
+                            </mat-error>
+                            <mat-icon matSuffix>lock</mat-icon>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" class="login-button">
+                Sign Up
+              </button>
+                    </form>
+                </mat-card-content>
+            </mat-tab> -->
+        </mat-tab-group>
+    </mat-card>
+</div>

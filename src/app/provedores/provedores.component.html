@@ -1,0 +1,40 @@
+<app-main-nav>
+    <button mat-button [matMenuTriggerFor]="menu">FILTRAR POR</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="filtroProvedores(0)">TODOS</button>
+        <button mat-menu-item (click)="filtroProvedores(1)">FAVORABLES</button>
+        <button mat-menu-item (click)="filtroProvedores(2)">PRESUNTOS</button>
+        <button mat-menu-item (click)="filtroProvedores(3)">DESVIRTUADOS</button>
+        <button mat-menu-item (click)="filtroProvedores(4)">DEFINITIVOS</button>
+    </mat-menu>
+    <span class="labelFiltro">{{filtrarPor}}</span>
+
+    <mat-grid-list [cols]="colSize" rowHeight="178px">
+
+        <mat-grid-tile *ngFor="let provedor of provedores" [colspan]=1>
+            <mat-card class="example-card">
+                <mat-card-header [ngSwitch]="provedor.status">
+                    <div mat-card-avatar class="example-header-image">
+                        <div mat-card-avatar class="example-header-image favorable" *ngSwitchCase="'Favorable'"></div>
+                        <div mat-card-avatar class="example-header-image presunto" *ngSwitchCase="'Presunto'"></div>
+                        <div mat-card-avatar class="example-header-image desvirtuado" *ngSwitchCase="'Desvirtuado'"></div>
+                        <div mat-card-avatar class="example-header-image definitivo" *ngSwitchCase="'Definitivo'"></div>
+                    </div>
+                    <mat-card-title>{{provedor.razonSocial | slice:0:22}}</mat-card-title>
+                    <mat-card-subtitle>{{ provedor.status | uppercase}} <button mat-button class="btnDetalles">DETALLES</button></mat-card-subtitle>
+
+                </mat-card-header>
+                <mat-card-content [ngSwitch]="provedor.status">
+                    <p *ngSwitchCase="'Favorable'">{{descFavorable | slice:0:130}}...</p>
+                    <p *ngSwitchCase="'Presunto'">{{descPresunto | slice:0:130}}...</p>
+                    <p *ngSwitchCase="'Desvirtuado'">{{descDesvirtuado | slice:0:130}}...</p>
+                    <p *ngSwitchCase="'Definitivo'">{{descDefinitivo | slice:0:130}}...</p>
+                </mat-card-content>
+
+            </mat-card>
+
+        </mat-grid-tile>
+
+
+    </mat-grid-list>
+</app-main-nav>

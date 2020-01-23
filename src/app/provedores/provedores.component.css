@@ -1,0 +1,40 @@
+.example-card {
+    width: 320px;
+    height: 300px;
+    margin: auto;
+}
+
+.example-header-image {
+    background-size: cover;
+}
+
+.definitivo {
+    background-image: url('/assets/images/definitivo.png');
+}
+
+.presunto {
+    background-image: url('/assets/images/presunto.png');
+}
+
+.desvirtuado {
+    background-image: url('/assets/images/desvirtuado.png');
+}
+
+.favorable {
+    background-image: url('/assets/images/favorable.png');
+}
+
+.card-btn {
+    text-align: left;
+}
+
+.labelFiltro {
+    color: #003d60;
+    padding: 8px;
+    /* background-color: #003d60; */
+}
+
+.btnDetalles {
+    color: #005c8f;
+    /* color: #003d60; */
+}

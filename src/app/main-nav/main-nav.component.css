@@ -1,5 +1,6 @@
 .sidenav-container {
     height: 100%;
+    /* color: tomato; */
 }
 
 .sidenav {
@@ -8,12 +9,14 @@
 
 .sidenav .mat-toolbar {
     background: inherit;
+    /* c: tomato; */
 }
 
 .mat-toolbar.mat-primary {
     position: sticky;
     top: 0;
     z-index: 1;
+    background: linear-gradient(to right, #005c8f, #003d60);
 }
 
 
@@ -32,8 +35,24 @@
     flex: 1 1 auto;
 }
 
+.responsive {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin-top: 15px;
+}
+
 .navBarEfra {
-    visibility: hidden;
+    display: none;
+    font-family: "Century Gothic";
+    /* margin-top: 5px; */
+}
+
+.mainTitle {
+    font-family: "Century Gothic";
+    /* flex: 1 1 auto;
+    text-align: center;
+    margin: 0 auto; */
 }
 
 @media (min-width: 506px) {
@@ -43,12 +62,24 @@
     .menuIcon {
         display: none;
     }
+    .navBarEfra {
+        display: block;
+    }
 }
 
-@media (min-width: 506px) {
-    .navBarEfra {
-        visibility: visible;
+@media (max-width: 505px) {
+    .mainTitle {
+        /* font-family: "Century Gothic";
+        flex: 1 1 auto;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; */
     }
+    /* .textCenter {
+        text-align: center;
+    } */
 }
 
 
