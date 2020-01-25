@@ -60,6 +60,14 @@ export class LoadProvedoresService {
   //   return this.provedoresTest;
   // }
 
+  validarEmail(email: string) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   getFiltroProvedores(tipo: number) {
     if (tipo === 0 ) {
       return this.provedoresTest;

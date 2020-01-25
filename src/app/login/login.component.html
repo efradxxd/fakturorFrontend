@@ -3,29 +3,30 @@
     <img src="../assets/images/logo.png" class="logo">
     <!-- </div> -->
     <mat-card class="mat-elevation-z12">
-        <mat-card-title style="text-align:center;">BIENVENIDO</mat-card-title>
-        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs matTab">
-            <mat-tab label="Ingresar" style="font-family: 'Century Gothic';
-            " class="matTab">
+        <mat-card-title color="primary" style="text-align:center; color: #005c8f;
+        ">BIENVENIDO</mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs matTab" [color]="validacion.color">
+            <mat-tab label="{{validacion.texto}}">
                 <mat-card-content>
                     <form action="">
                         <mat-form-field>
-                            <input matInput placeholder="Email" required name="email" ngModel #email="ngModel">
-                            <mat-error *ngIf="email.invalid"> Tu email es necesario</mat-error>
-                            <mat-icon matSuffix>email</mat-icon>
+                            <input matInput type="email" placeholder="Correo Electrónico" required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" #email="ngModel">
+                            <mat-error *ngIf="email.invalid"> Tu Email es necesario</mat-error>
+                            <mat-icon matSuffix [color]="validacion.color">email</mat-icon>
                         </mat-form-field>
                         <mat-form-field>
-                            <input matInput placeholder="Password" type="password" required minlength="6" name="password" ngModel #password="ngModel">
-                            <mat-error *ngIf="password.errors && password.errors.required">
+                            <input matInput placeholder="Contreseña" type="password" required minlength="6" name="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" #password="ngModel">
+                            <mat-error *ngIf="password.errors && password.errors.required" style="color: blueviolet;">
                                 Tu contraseña es necesaria
                             </mat-error>
-                            <mat-error *ngIf="password.errors && password.errors.minlength">
+                            <mat-error *ngIf="password.errors && password.errors.minlength" style="color: red;
+                            ">
                                 Por seguridad tu contraseña debe tener más de 6 caracteres
                             </mat-error>
-                            <mat-icon matSuffix>lock</mat-icon>
+                            <mat-icon matSuffix [color]="validacion.color">lock</mat-icon>
                         </mat-form-field>
                         <!-- <mat-checkbox>Remember Me!</mat-checkbox> -->
-                        <button mat-raised-button color="primary" class="login-button">
+                        <button mat-raised-button color="primary" class="login-button" (click)="validarDatos()">
                   ACCEDER
                 </button>
 

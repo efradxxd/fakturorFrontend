@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ViewEncapsulation } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,7 +27,7 @@ import {
   MatTabsModule,
   MatFormFieldModule,
   MatInputModule,
-  MatCheckboxModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 @NgModule({
