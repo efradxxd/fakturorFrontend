@@ -20,15 +20,22 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegistrerUserComponent } from './registrer-user/registrer-user.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
 import {
   MatTabsModule,
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule
 } from '@angular/material';
+import { MatChipsModule } from '@angular/material/chips';
+// import {MatToolbarModule} from '@angular/material/toolbar';
+import { FooterComponent } from './footer/footer.component';
+import { FooterBComponent } from './footer-b/footer-b.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +45,10 @@ import {
     PayInfoComponent,
     ProvedoresComponent,
     LoginComponent,
-    RegistrerUserComponent
+    RegistrerUserComponent,
+    FooterComponent,
+    FooterBComponent,
+    RegistrarComponent
   ],
   imports: [
     FormsModule,
@@ -57,9 +67,13 @@ import {
     MatRadioModule,
     MatMenuModule,
     MatTabsModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

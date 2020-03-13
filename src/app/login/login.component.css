@@ -10,13 +10,17 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    /* font-family: "Century Gothic" */
+    text-align: center;
 }
 
 .logo {
     width: 30%;
-    /* color: rgb(55, 55, 55); */
-    /* height: 30%; */
+}
+
+.listaCenter {
+    display: block;
+    margin: auto;
+    margin-top: 3%;
 }
 
 img {
@@ -32,7 +36,13 @@ mat-card {
     width: 30%;
     margin: auto;
     border-radius: 8px;
-    /* font-family: "Century Gothic"; */
+}
+
+.registrate {
+    width: 30%;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 8px;
 }
 
 
@@ -51,7 +61,15 @@ mat-card {
     .logo {
         width: 70%;
         margin-top: 15%;
-        /* height: 10%; */
+    }
+}
+
+@media (max-width: 506px) {
+    .registrate {
+        width: 80%;
+        margin: auto;
+        margin-top: 10px;
+        border-radius: 8px;
     }
 }
 
@@ -60,16 +78,10 @@ mat-checkbox {
     width: 80%;
     display: block;
     margin: auto;
-    /* font-family: "Century Gothic"; */
 }
 
 mat-card-content {
     margin-top: 20px;
-    /* font-family: "Century Gothic"; */
-}
-
-.matTab {
-    /* font-family: "Century Gothic"; */
 }
 
 .login-button {
@@ -77,12 +89,35 @@ mat-card-content {
     display: block;
     width: 80%;
     margin: 20px auto;
-    /* background-color: #005c8f; */
-    /* font-family: "Century Gothic"; */
+}
+
+.registrar-button {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
 }
 
 .login {
     display: block;
     margin: auto;
     width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    margin: 10px 0px;
+    /* float: left; */
+    display: inline-block;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 6px;
 }

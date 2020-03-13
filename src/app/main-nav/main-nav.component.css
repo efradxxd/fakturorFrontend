@@ -50,9 +50,6 @@
 
 .mainTitle {
     font-family: "Century Gothic";
-    /* flex: 1 1 auto;
-    text-align: center;
-    margin: 0 auto; */
 }
 
 @media (min-width: 506px) {
@@ -66,25 +63,3 @@
         display: block;
     }
 }
-
-@media (max-width: 505px) {
-    .mainTitle {
-        /* font-family: "Century Gothic";
-        flex: 1 1 auto;
-        text-align: center;
-        margin: 0 auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto; */
-    }
-    /* .textCenter {
-        text-align: center;
-    } */
-}
-
-
-/* @media (min-width: 410px) {
-    .navBarEfra {
-        display: yes;
-    }
-} */

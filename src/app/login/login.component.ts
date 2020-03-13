@@ -8,10 +8,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+
   validacion = {
     texto: 'INGRESA TUS DATOS',
-    estilo: '',
-    color: 'primary'
+    estilo: '#005c8f',
+    color: 'grey'
   };
   user = {
     email : '',
@@ -22,17 +23,24 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  habilitarBoton() {
+    if (this.user.email !== '' && this.user.password !== '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   validarDatos() {
     let validEmail = this.loadProvedoresService.validarEmail(this.user.email);
     if (validEmail) {
-      this.validacion.color = 'primary';
+      this.validacion.color = 'grey';
       this.validacion.texto = 'INGRESA TUS DATOS';
       console.log(this.user.email);
       console.log(this.user.password);
     } else {
       this.validacion.texto = 'EMAIL INVÁLIDO';
-      this.validacion.color = 'accent';
+      this.validacion.color = 'red';
     }
   }
 

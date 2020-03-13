@@ -1,10 +1,50 @@
-<app-main-nav>
-    <div class="example-button-row">
-        <button mat-button>Basic</button>
-        <button mat-button color="primary">Primary</button>
-        <button mat-button color="accent">Accent</button>
-        <button mat-button color="warn">Warn</button>
-        <button mat-button disabled>Disabled</button>
-        <a mat-button routerLink=".">Link</a>
-    </div>
-</app-main-nav>
+<div class="login-page">
+    <img src="../assets/images/logo.png" class="logo">
+    <mat-card class="mat-elevation-z12">
+        <mat-card-title [style.color]="validacion.estilo
+        ">BIENVENIDO</mat-card-title>
+        <mat-card-subtitle [style.color]="validacion.color
+        ">{{validacion.texto}}</mat-card-subtitle>
+        <mat-card-content>
+            <form action="">
+                <mat-form-field>
+                    <input matInput type="email" placeholder="Correo Electrónico" required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" #email="ngModel">
+                    <mat-error *ngIf="email.invalid"> Tu Email es necesario</mat-error>
+                    <mat-icon matSuffix [color]="validacion.color">email</mat-icon>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Contreseña" type="password" required minlength="6" name="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" #password="ngModel">
+                    <mat-error *ngIf="password.errors && password.errors.required" style="color: red;">
+                        Tu contraseña es necesaria
+                    </mat-error>
+                    <mat-error *ngIf="password.errors && password.errors.minlength" style="color: red;
+                            ">
+                        Por seguridad tu contraseña debe tener más de 6 caracteres
+                    </mat-error>
+                    <mat-icon matSuffix [color]="validacion.color">lock</mat-icon>
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="login-button" [disabled]="!habilitarBoton()" (click)="validarDatos()">
+                  ACCEDER
+                </button>
+                <button mat-stroked-button color="primary" class="login-button">
+                  RECUPERAR CONTRASEÑA
+                </button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <mat-card-subtitle>¿NO TIENES CUENTA?</mat-card-subtitle>
+    <button mat-raised-button color="primary" class="registrar-button">
+            REGISTRARME
+        </button>
+    <ul class="listaCenter">
+        <li>
+            <a routerLink="/privacidad">Privacidad</a>
+        </li>
+        <li>
+            <a routerLink="/condiciones">Condiciones</a>
+        </li>
+        <li>
+            <a routerLink="/preferencias">Preferencias</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,63 @@
+<div class="example-container">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre">
+        <mat-icon matSuffix color="primary">account_circle</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Apellido paterno" value="">
+        <mat-icon matSuffix color="primary">label</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Apellido materno" value="">
+        <mat-icon matSuffix color="primary">label</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Tu email" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+        <mat-icon matSuffix color="primary">email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <span matPrefix>+52 &nbsp;</span>
+        <input matInput type="number" placeholder="Apellido materno" value="">
+        <mat-icon matSuffix color="primary">mode_edit</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="pass1" name="password1" #password1="ngModel" placeholder="Contraseña">
+        <mat-icon matSuffix color="primary">lock</mat-icon>
+        <mat-error *ngIf="password1.errors && password1.errors.required" style="color: red;">
+            Tu contraseña es necesaria
+        </mat-error>
+        <mat-error *ngIf="password1.errors && password1.errors.minlength" style="color: red;">
+            Por seguridad tu contraseña debe tener un mínimo de 8 caracteres
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="pass2" required="true" name="password2" placeholder="Repite tu Contraseña" minlength="8" name="password2" #password2="ngModel">
+        <mat-icon matSuffix color="primary">lock</mat-icon>
+        <mat-error *ngIf="password2.errors && password2.errors.required" style="color: red;">
+            Tu contraseña es necesaria
+        </mat-error>
+        <mat-error *ngIf="password2.errors && password2.errors.minlength" style="color: red;">
+            Por seguridad tu contraseña debe tener un mínimo de 8 caracteres
+        </mat-error>
+        <mat-error *ngIf="passMatch()">
+            Las contraseñas introducidas no coinciden
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Estado</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let estado of estados" [value]="estado.value">
+                {{estado.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <h1>{{pass1}}</h1>
+    <h2>{{pass2}}</h2>
+</div>
